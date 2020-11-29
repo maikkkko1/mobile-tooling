@@ -1,0 +1,24 @@
+{
+  "name": "unicred-tooling",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd server && npm start --silent\" \"cd app && npm start --silent\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maikkkko1/mobile-tooling.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maikkkko1/mobile-tooling/issues"
+  },
+  "homepage": "https://github.com/maikkkko1/mobile-tooling#readme",
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}

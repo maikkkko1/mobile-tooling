@@ -7,12 +7,18 @@ const isDev = require("electron-is-dev");
 let mainWindow;
 
 function createWindow() {
-  mainWindow = new BrowserWindow({ width: 1350, height: 900 });
+  mainWindow = new BrowserWindow({
+    width: 1350,
+    height: 900,
+    icon: __dirname + "/src/assets/img/logo.png",
+  });
+
   mainWindow.loadURL(
     isDev
       ? "http://localhost:3000"
       : `file://${path.join(__dirname, "../build/index.html")}`
   );
+
   mainWindow.removeMenu();
   mainWindow.on("closed", () => (mainWindow = null));
 }
