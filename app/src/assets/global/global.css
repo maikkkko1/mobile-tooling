@@ -1,0 +1,19 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.bg-unicred {
+  background-color: #06664b !important;
+}
+
+.text-black {
+  color: black !important;
+}
+
+tbody {
+  width: 96%;
+  overflow-y: scroll;
+  height: 550px;
+  padding-bottom: 30px !important;
+  position: absolute;
+}
