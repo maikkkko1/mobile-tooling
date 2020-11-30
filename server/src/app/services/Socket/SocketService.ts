@@ -1,6 +1,8 @@
 import SocketEvents from "../../constants/Socket/SocketEvents";
+import AnalyticsController from "../../controllers/Firebase/AnalyticsController";
 import PreferencesController from "../../controllers/Preferences/PreferencesController";
 import RequestsController from "../../controllers/Requests/RequestsController";
+import { FirebaseAnalyticsLogging } from "../../types/FirebaseAnalyticsLogging";
 import { HttpRequestLogging } from "../../types/HttpRequestLogging";
 import { SharedPrefereceLogging } from "../../types/SharedPrefereceLogging";
 
@@ -47,6 +49,27 @@ export default class SocketService {
 
       socket.on(SocketEvents.EVENT.RESET_PREFERENCE, () => {
         new PreferencesController().clear();
+      });
+
+      socket.on("disconnect", () => {
+        return null;
+      });
+    });
+  }
+
+  static listenForAnalytics() {
+    this.socketServer.on("connection", (socket) => {
+      socket.on(
+        SocketEvents.EVENT.NEW_FIREBASE_EVENT,
+        (firebaseEvent: FirebaseAnalyticsLogging) => {
+          const parsedFirebaseEvent = JSON.parse(firebaseEvent.toString());
+
+          new AnalyticsController().create(parsedFirebaseEvent);
+        }
+      );
+
+      socket.on(SocketEvents.EVENT.RESET_FIREBASE_EVENT, () => {
+        new AnalyticsController().clear();
       });
 
       socket.on("disconnect", () => {
