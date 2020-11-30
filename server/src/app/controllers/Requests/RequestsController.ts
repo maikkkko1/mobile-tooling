@@ -61,6 +61,14 @@ class RequestsController extends MainController implements IController {
     }
   };
 
+  internalClear = async () => {
+    try {
+      return await this.controllerService.clear();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   private verifyRegisterLimit = async () => {
     const getAll: any[] = await this.controllerService.get();
 

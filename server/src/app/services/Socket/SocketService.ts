@@ -30,6 +30,10 @@ export default class SocketService {
         new RequestsController().create(parsedRequest);
       });
 
+      socket.on(SocketEvents.EVENT.RESET_REQUESTS, () => {
+        new RequestsController().internalClear();
+      });
+
       socket.on("disconnect", () => {
         return null;
       });
