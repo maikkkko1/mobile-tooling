@@ -106,6 +106,11 @@ class AppNavbar extends React.Component {
                   Shared Preferences
                 </NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink tag={Link} to="/analytics">
+                  Firebase Analytics
+                </NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Container>
