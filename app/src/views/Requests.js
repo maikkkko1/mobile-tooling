@@ -169,7 +169,11 @@ class Requests extends React.Component {
                         <tr key={i}>
                           <td>{request.createdAt}</td>
                           <td>{request.device}</td>
-                          <td title={request.url} style={{ width: 20 }}>
+                          <td
+                            className="font-weight-bold"
+                            title={request.url}
+                            style={{ width: 20 }}
+                          >
                             {this.wrapUrl(request.url)}
                           </td>
                           <td>{request.method}</td>

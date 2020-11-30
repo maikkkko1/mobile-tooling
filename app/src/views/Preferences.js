@@ -106,7 +106,9 @@ class Preferences extends React.Component {
                         <tr key={i}>
                           <td>{preference.createdAt}</td>
                           <td>{preference.parentKey}</td>
-                          <td>{preference.keyName}</td>
+                          <td className="font-weight-bold">
+                            {preference.keyName}
+                          </td>
                           <td>
                             <span
                               title={JSON.stringify(preference.keyValue)}

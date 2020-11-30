@@ -96,7 +96,7 @@ class Analytics extends React.Component {
                       return (
                         <tr key={i}>
                           <td>{event.createdAt}</td>
-                          <td>{event.eventKey}</td>
+                          <td className="font-weight-bold">{event.eventKey}</td>
                           <td>
                             <span
                               title={JSON.stringify(event.eventValue)}
