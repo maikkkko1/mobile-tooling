@@ -1,3 +1,5 @@
+/* eslint no-use-before-define: 0 */
+
 import AppNavbar from "components/Navbars/AppNavbar";
 import React from "react";
 
@@ -36,6 +38,8 @@ class Requests extends React.Component {
           responseModal: false,
           key: null,
         });
+
+      default:
     }
   }
 
@@ -144,7 +148,7 @@ class Requests extends React.Component {
                 Limpar requisições
               </Button>
 
-              {this.state.requestsList.length == 0 ? (
+              {this.state.requestsList.length === 0 ? (
                 <h4 className="mt-5">Nenhuma requisição encontrada.</h4>
               ) : null}
 
@@ -174,7 +178,7 @@ class Requests extends React.Component {
                               className="font-weight-bold"
                               style={{
                                 color:
-                                  request.httpCode == 200
+                                  request.httpCode === 200
                                     ? "green"
                                     : "orangered",
                               }}

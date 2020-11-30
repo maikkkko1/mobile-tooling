@@ -3,7 +3,6 @@ import React from "react";
 
 import PreferencesHandler from "handlers/PreferencesHandler";
 import JSONViewer from "components/Requests/JSONViewer";
-import Button from "reactstrap/lib/Button";
 
 class Preferences extends React.Component {
   constructor(props) {
@@ -27,6 +26,8 @@ class Preferences extends React.Component {
           keyValueModal: false,
           key: null,
         });
+
+      default:
     }
   }
 
@@ -87,7 +88,7 @@ class Preferences extends React.Component {
                 </small>
               </p>
 
-              {this.state.preferencesList.length == 0 ? (
+              {this.state.preferencesList.length === 0 ? (
                 <h4 className="mt-5">Nenhuma shared preference encontrada.</h4>
               ) : null}
 

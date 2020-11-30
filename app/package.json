@@ -1,7 +1,6 @@
 {
   "name": "unicred-mobile-tooling",
   "version": "1.0.0",
-  "description": "<your project description>",
   "author": "Maikon Ferreira",
   "build": {
     "appId": "com.unicredmobile.tooling"
@@ -45,7 +44,7 @@
     "electron-build": "electron-builder",
     "release": "yarn react-build && electron-builder --publish=always",
     "build": "yarn react-build && yarn electron-build",
-    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start --s\" \"wait-on http://localhost:3000 && APP_DEV=false electron .\"",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
     "compile-sass": "node-sass src/assets/scss/blk-design-system-react.scss src/assets/css/blk-design-system-react.css",
     "minify-sass": "node-sass src/assets/scss/blk-design-system-react.scss src/assets/css/blk-design-system-react.min.css --output-style compressed",
