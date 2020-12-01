@@ -9,5 +9,5 @@ module.exports = {
   host: process.env.DB_HOST,
   dialect: "sqlite",
   logging: false,
-  storage: ":tooling_db",
+  storage: "tooling_db.sqlite3",
 };

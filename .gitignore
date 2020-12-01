@@ -1,4 +1,4 @@
 node_modules
 build/
 __tests__/coverage
-:tooling_db
+tooling_db.sqlite3
