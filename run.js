@@ -5,20 +5,12 @@ exec("npm i --no-warnings", function (err, out, stderr) {
 
   console.log("Iniciando Unicred Mobile Tooling...");
 
-  cmd.runSync("npm i -g pm2");
-
-  cmd.runSync("cd app && npm i --no-warnings");
-  cmd.runSync("cd server && npm i --no-warnings");
+  cmd.runSync("cd app && npm i --no-warnings && npm i --save-dev sass");
+  cmd.runSync("cd server && npm i --no-warnings && npm i sqlite3 --save");
 
   cmd.runSync("cd server && npx sequelize-cli db:migrate");
 
-  cmd.runSync(
-    "pm2 kill && cd server && pm2 start npm --name 'tooling-server' -- start"
-  );
-
-  cmd.runSync(
-    "cd app && pm2 start npm --name 'tooling-app' -- start --no-autorestart"
-  );
+  cmd.runSync("npm start");
 
   console.log("Iniciando Unicred Mobile Tooling...");
 });

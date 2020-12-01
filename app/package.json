@@ -12,10 +12,10 @@
     "classnames": "2.2.6",
     "concurrently": "^5.3.0",
     "cross-env": "^7.0.2",
+    "electron-is-dev": "^1.2.0",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
     "moment": "2.24.0",
-    "node-sass": "4.13.1",
     "nouislider": "14.2.0",
     "perfect-scrollbar": "1.5.0",
     "react": "16.13.1",
@@ -28,13 +28,13 @@
     "reactstrap": "8.4.1",
     "socket.io-client": "^3.0.3",
     "wait-on": "^5.2.0",
-    "web-vitals": "^0.2.4",
-    "electron-is-dev": "^1.2.0"
+    "web-vitals": "^0.2.4"
   },
   "devDependencies": {
     "electron": "^11.0.3",
     "electron-builder": "^22.9.1",
-    "electron-is-dev": "^1.2.0"
+    "electron-is-dev": "^1.2.0",
+    "sass": "^1.29.0"
   },
   "scripts": {
     "react-start": "react-scripts start",
@@ -44,7 +44,7 @@
     "electron-build": "electron-builder",
     "release": "yarn react-build && electron-builder --publish=always",
     "build": "yarn react-build && yarn electron-build",
-    "start": "concurrently \"cross-env BROWSER=none yarn react-start --s\" \"wait-on http://localhost:3000 && APP_DEV=false electron .\"",
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start --s\" \"wait-on http://localhost:3000 && electron .\"",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
     "compile-sass": "node-sass src/assets/scss/blk-design-system-react.scss src/assets/css/blk-design-system-react.css",
     "minify-sass": "node-sass src/assets/scss/blk-design-system-react.scss src/assets/css/blk-design-system-react.min.css --output-style compressed",
